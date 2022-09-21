@@ -9,7 +9,7 @@ const WeatherCard = ({ weather }) => {
     <h2 className="card-title">{weather.current?.feelslike_c}ºC</h2>
     <h5 className="card-text">{weather.current?.condition.text}</h5>
     <p>{weather.current?.last_updated}</p>
-    <p><i className="bi bi-geo-alt-fill"></i> {weather.location?.name}</p>
+    <p><i className="bi bi-geo-alt-fill"></i> {weather.location?.tz_id} - {weather.location?.name}</p>
   </div>
 </div>
   );

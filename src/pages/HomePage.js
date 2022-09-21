@@ -7,23 +7,22 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
 
-  const getWeather = async () => {
+  const getCurrentWeather = async () => {
     setIsLoading(true);
-    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=Tucuman&days=1&aqi=no&alerts=no');
+    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
     setWeather(data);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getWeather();
+    getCurrentWeather();
   }, []);
 
   console.log(weather);
 
   return (
     <div>
-        {isLoading && <Loading />}
-        <WeatherCard weather={weather} />
+        {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
     </div>
   );
 };
