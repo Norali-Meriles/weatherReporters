@@ -1,0 +1,9 @@
+.cardComponent {
+    background: rgb(40, 40, 78) ;
+    color: azure;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.cardText{
+    font-size: xx-large;
+    font-family: 'Candal', sans-serif;
+}
