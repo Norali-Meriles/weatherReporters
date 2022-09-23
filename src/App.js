@@ -1,10 +1,10 @@
 import './App.css';
-import { Search } from './components';
+import { InfoCards } from './components/InfoCards';
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <InfoCards></InfoCards>
     </div>
   );
 }
