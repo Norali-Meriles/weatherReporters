@@ -5,11 +5,10 @@ import Select from './Select';
 const Search = ({ location }) => {
   const [city, setCity] = useState();
   const [cityName, setCityName] = useState();
-  // const [infoCity, setInfoCity] = useState();
+  const [infoCity, setInfoCity] = useState();
 
   const searchCity = async () => {
     const { data } = await axios(`http://api.weatherapi.com/v1/search.json?key=6be8c28794924ed8a2a184922222905&q=${location}`);
-    console.log(data);
     setCity(data);
   };
 
@@ -17,19 +16,19 @@ const Search = ({ location }) => {
     searchCity();
   }, []);
 
-  console.log(cityName);
+  // console.log(cityName);
 
   const getCityByName = async () => {
-    const { info } = await axios(`http://api.weatherapi.com/v1/search.json?key=6be8c28794924ed8a2a184922222905&q=${cityName}&aqi=no`);
-    console.log(info);
-    // setInfoCity(info);
+    if (cityName) {
+      const { data } = await axios(`https://api.weatherapi.com/v1/current.json?key=6be8c28794924ed8a2a184922222905&q=${cityName}&aqi=no`);
+      setInfoCity(data);
+    }
   };
-
   useEffect(() => {
     getCityByName();
-  }, []);
+  }, [cityName]);
 
-  // console.log(infoCity);
+  console.log(infoCity);
 
   return (
     <div>
