@@ -17,7 +17,6 @@ export function ThemeProvider(props) {
   const [theme, setTheme] = useState('dark');
   const toggleTheme = () => (theme === 'dark' ? setTheme('light') : setTheme('dark'));
   const value = { theme: themeStyles[theme], toggleTheme, themeName: theme };
-  console.log(theme);
   return <ThemeContext.Provider value={value} {...props} />;
 }
 
