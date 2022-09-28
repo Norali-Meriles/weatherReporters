@@ -2,12 +2,12 @@
     background: rgb(30 , 33, 58);
     color: azure;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: "20rem";
-    height: "10rem";
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5%;
+    width: 20rem;
+    height: 10rem; 
 }
 .cardText {
     font-size: xx-large;
