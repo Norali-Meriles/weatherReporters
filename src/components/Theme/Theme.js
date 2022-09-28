@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
-import { useTheme } from '../providers/ThemeProvider';
+import { useTheme } from '../../providers/ThemeProvider';
 
 const Theme = () => {
   const { theme, toggleTheme, themeName } = useTheme();

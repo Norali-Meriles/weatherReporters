@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { ThemeProvider } from './providers/ThemeProvider';
-import Theme from './components/Theme';
+import Theme from './components/Theme/Theme';
 
 function App() {
   return (
