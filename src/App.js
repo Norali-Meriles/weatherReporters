@@ -1,11 +1,16 @@
+import React from 'react';
 import './App.css';
-import { InfoCards } from './components/InfoCards';
+
+import { ThemeProvider } from './providers/ThemeProvider';
+import Theme from './components/Theme/Theme';
 
 function App() {
   return (
-    <div className="App">
-      <InfoCards></InfoCards>
-    </div>
+
+    <ThemeProvider>
+      <div className="App">
+        <Theme/>
+      </div>
   );
 }
 
