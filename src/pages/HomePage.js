@@ -3,6 +3,7 @@ import axios from 'axios';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
+import { ClimaProvider } from '../providers/ClimaProvider';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,9 +20,8 @@ const HomePage = () => {
     getCurrentWeather();
   }, []);
 
-  console.log(weather);
-
   return (
+    <ClimaProvider>
     <div className="container">
       <div className="row">
         <div className="col-6">
@@ -29,10 +29,15 @@ const HomePage = () => {
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
         <div className="col-6">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, dolorum.</p>
+          <div>aca va componente de Norali</div>
+          <br />
+          <br />
+          <br />
+          <div>aca va componente de Mati</div>
         </div>
       </div>
     </div>
+    </ClimaProvider>
   );
 };
 
