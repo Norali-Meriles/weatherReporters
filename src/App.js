@@ -9,11 +9,12 @@ import Theme from './components/Theme/Theme';
 
 function App() {
   return (
-
+    <div>
     <ThemeProvider>
-       <HomePage />
-        <Theme/>
-      </div>
+      <Theme/>
+      <HomePage />
+    </ThemeProvider>
+    </div>
 
   );
 }

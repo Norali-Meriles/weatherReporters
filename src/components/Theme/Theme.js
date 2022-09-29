@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from '../../logo.svg';
 
 import { useTheme } from '../../providers/ThemeProvider';
 
 const Theme = () => {
-  const { theme, toggleTheme, themeName } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <div>
       <nav className="App-main" style={{ backgroundColor: theme.background, color: theme.textColor }}>
@@ -15,11 +14,11 @@ const Theme = () => {
           <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChange={toggleTheme} />
         </div>
       </nav>
-      <main className="App-main" style={{ backgroundColor: theme.background, color: theme.textColor }}>
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <main className="App-main" style={{ backgroundColor:
+      theme.background, color: theme.textColor }}>
         <p>Current Theme is `{themeName}`</p>
         <button onClick={toggleTheme}>Change Theme</button>
-      </main>
+      </main> */}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import './InfoCards.css';
+// import './InfoCards.css';
 
 const InfoCards = ({
   humidity, windSpeed, visibility, pressure,

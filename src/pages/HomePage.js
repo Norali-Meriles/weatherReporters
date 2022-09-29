@@ -4,6 +4,7 @@ import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
+import InfoCards from '../components/InfoCards/InfoCards';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +34,9 @@ const HomePage = () => {
           <br />
           <br />
           <br />
-          <div>aca va componente de Mati</div>
+          <div>
+            <InfoCards />
+          </div>
         </div>
       </div>
     </div>
