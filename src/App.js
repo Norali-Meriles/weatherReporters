@@ -6,11 +6,11 @@ import Theme from './components/Theme/Theme';
 
 function App() {
   return (
+
     <ThemeProvider>
       <div className="App">
         <Theme/>
       </div>
-    </ThemeProvider>
   );
 }
 
