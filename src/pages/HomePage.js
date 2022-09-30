@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
-<<<<<<< HEAD
 import useFetch from '../hooks/CustomFetch/useFetch';
-=======
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
->>>>>>> 171c68c77f1583b324ce94a5ca0286b95fd7a176
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,10 +20,6 @@ const HomePage = () => {
   useEffect(() => {
     getCurrentWeather();
   }, []);
-<<<<<<< HEAD
-=======
-
->>>>>>> 171c68c77f1583b324ce94a5ca0286b95fd7a176
   return (
     <ClimaProvider>
     <div className="container">
