@@ -1,0 +1,22 @@
+.card {
+    background: rgb(30 , 33, 58);
+    color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    width: 20rem;
+    height: 10rem; 
+}
+.cardText {
+    font-size: xx-large;
+    font-family: "Candal", sans-serif;
+}
+.container {
+    background: rgb(16, 14, 29);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
