@@ -1,12 +1,14 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useClimaContex } from '../../providers/ClimaProvider';
+import { useTheme } from '../../providers/ThemeProvider';
 
 const WeatherCard = ({ weather }) => {
   const data = useClimaContex();
+  const { theme } = useTheme();
 
   return (
-    <div className="card">
+    <div className="card" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <img
         src={data ? data.current?.condition.icon : weather.current?.condition.icon}
         className="card-img-top"

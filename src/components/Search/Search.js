@@ -2,11 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useClimaToggleContex } from '../../providers/ClimaProvider';
 import Select from './Select';
+import { useTheme } from '../../providers/ThemeProvider';
 
 const Search = ({ location }) => {
   const [city, setCity] = useState();
   const [cityName, setCityName] = useState();
   const setDatoClima = useClimaToggleContex();
+  const { theme } = useTheme();
 
   const searchCity = async () => {
     const { data } = await axios(
@@ -33,7 +35,10 @@ const Search = ({ location }) => {
 
   return (
     <div>
-      <Select city={city} setCityName={setCityName} />
+      <Select
+      city={city}
+      setCityName={setCityName}
+      style={{ backgroundColor: theme.background, color: theme.textColor }} />
     </div>
   );
 };

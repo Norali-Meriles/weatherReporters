@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTheme } from '../providers/ThemeProvider';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
@@ -9,6 +10,7 @@ import InfoCards from '../components/InfoCards/InfoCards';
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
+  const { theme } = useTheme();
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
@@ -23,7 +25,7 @@ const HomePage = () => {
 
   return (
     <ClimaProvider>
-    <div className="container">
+    <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <div className="row">
         <div className="col-6">
         <Search />
