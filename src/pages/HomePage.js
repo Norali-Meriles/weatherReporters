@@ -25,7 +25,7 @@ const HomePage = () => {
 
   return (
     <ClimaProvider>
-    <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+    <div className="container-fluid" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <div className="row">
         <div className="col-6">
         <Search />
