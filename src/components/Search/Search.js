@@ -2,8 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useClimaToggleContex } from '../../providers/ClimaProvider';
 import Select from './Select';
+import { useTheme } from '../../providers/ThemeProvider';
 
 const Search = ({ location }) => {
+  const { theme } = useTheme();
   const [city, setCity] = useState();
   const [cityName, setCityName] = useState();
   const setDatoClima = useClimaToggleContex();
@@ -32,8 +34,9 @@ const Search = ({ location }) => {
   }, [cityName]);
 
   return (
-    <div>
-      <Select city={city} setCityName={setCityName} />
+    <div className="my-3">
+      <Select city={city} setCityName={setCityName}
+      style={{ backgroundColor: theme.background, color: theme.textColor }} />
     </div>
   );
 };
