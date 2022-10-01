@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useClimaContex } from '../../providers/ClimaProvider';
 
 const WeatherCard = ({ weather }) => {
