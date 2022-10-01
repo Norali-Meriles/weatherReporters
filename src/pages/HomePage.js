@@ -23,7 +23,6 @@ const HomePage = () => {
     getCurrentWeather();
   }, []);
 
-  console.log(weather);
   return (
     <ClimaProvider>
     <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>

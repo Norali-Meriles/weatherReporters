@@ -8,6 +8,9 @@ const InfoCards = ({ weather }) => {
   return (
         <div className='container text-center'>
             <div className="row justify-content-md-center">
+                <div className="col-12 mb-2">
+                    <h4>Today`s highlights</h4>
+                </div>
                 <div className="col">
                     <div className="card text-center my-2 mx-2" style={{ backgroundColor: theme.background, color: theme.textColor }}>
                         <div className="card-body">
