@@ -14,8 +14,11 @@ const Theme = () => {
           <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChange={toggleTheme} />
         </div>
       </nav>
-      {/* <main className="App-main" style={{ backgroundColor:
-      theme.background, color: theme.textColor }}>
+      {/* <main className="App-main" style={{
+        backgroundColor:
+      theme.background,
+        color: theme.textColor,
+      }}>
         <p>Current Theme is `{themeName}`</p>
         <button onClick={toggleTheme}>Change Theme</button>
       </main> */}
