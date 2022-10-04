@@ -6,8 +6,10 @@ import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
+import { useTheme } from '../providers/ThemeProvider';
 
 const HomePage = () => {
+  const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
   const { theme } = useTheme();
@@ -25,20 +27,14 @@ const HomePage = () => {
 
   return (
     <ClimaProvider>
-    <div className="container-fluid" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+    <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <div className="row">
-        <div className="col-6">
+        <div className="col col-md-6 col-sm-12">
         <Search />
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
-        <div className="col-6">
-          <div>aca va componente de Norali</div>
-          <br />
-          <br />
-          <br />
-          <div>
-            <InfoCards />
-          </div>
+        <div className="col col-md-6 col-sm-12 my-5">
+          {isLoading ? <Loading /> : <InfoCards weather={weather} />}
         </div>
       </div>
     </div>

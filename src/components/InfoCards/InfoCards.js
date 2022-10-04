@@ -1,54 +1,47 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import { useTheme } from '../../providers/ThemeProvider';
-// import './InfoCards.css';
+import { useClimaContex } from '../../providers/ClimaProvider';
 
-const InfoCards = ({
-  humidity, windSpeed, visibility, pressure,
-}) => {
+const InfoCards = ({ weather }) => {
+  const data = useClimaContex();
   const { theme } = useTheme();
   return (
-        <Container className='container text-center'>
-            <Row className="justify-content-md-center">
-                <Col>
-                    <Card className="text-center " style={{ backgroundColor: theme.background, color: theme.textColor }}>
-                        <Card.Body>
-                            <Card.Title>Humidity</Card.Title>
-                            <p className='cardText'>{humidity} %</p>
-                            <ProgressBar animated now={humidity} />
-                        </Card.Body>
-                    </Card>
-                    <Card className="text-center " style={{ backgroundColor: theme.background, color: theme.textColor }}>
-                        <Card.Body>
-                            <Card.Title>Air Pressure</Card.Title>
-                            <p className='cardText'>{pressure} mb</p>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className="text-center " style={{ backgroundColor: theme.background, color: theme.textColor }}>
-                        <Card.Body>
-                            <Card.Title>Visibiliy</Card.Title>
-                            <p className='cardText'>{visibility} miles</p>
-                        </Card.Body>
-                    </Card>
-                    <Card className="text-center "style={{ backgroundColor: theme.background, color: theme.textColor }} >
-                        <Card.Body>
-                            <Card.Title>Wind Speed</Card.Title>
-                            <p className='cardText'>{windSpeed} miles</p>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        <div className='container text-center'>
+            <div className="row justify-content-md-center">
+                <div className="col-12 mb-2">
+                    <h4>Today`s highlights</h4>
+                </div>
+                <div className="col">
+                    <div className="card text-center my-2 mx-2" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+                        <div className="card-body">
+                            <div className="card-title">Humidity</div>
+                            <p className='cardText'>{data ? data.current?.humidity : weather.current?.humidity} %</p>
+                        </div>
+                    </div>
+                    <div className="card text-center my-2 mx-2" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+                    <div className="card-body">
+                    <div className="card-title">Pressure</div>
+                            <p className='cardText'>{data ? data.current?.pressure_mb : weather.current?.pressure_mb} mb</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="card text-center my-2 mx-2" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+                    <div className="card-body">
+                    <div className="card-title">Visibility</div>
+                            <p className='cardText'>{data ? data.current?.vis_km : weather.current?.vis_km} km</p>
+                        </div>
+                    </div>
+                    <div className="card text-center my-2 mx-2" style={{ backgroundColor: theme.background, color: theme.textColor }}>
+                    <div className="card-body">
+                    <div className="card-title">Wind Speed</div>
+                            <p className='cardText'>{data ? data.current?.wind_kph : weather.current?.wind_kph} km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
   );
 };
-InfoCards.defaultProps = {
-  humidity: 0,
-  windSpeed: 'no disponible',
-  visibility: 'no disponible',
-  pressure: 'no disponible',
-};
+
 export default InfoCards;
