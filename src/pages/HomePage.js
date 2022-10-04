@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTheme } from '../providers/ThemeProvider';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
@@ -11,6 +12,7 @@ const HomePage = () => {
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
+  const { theme } = useTheme();
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
