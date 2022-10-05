@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-// import './InfoCards.css';
-
 const InfoCards = ({
   humidity, windSpeed, visibility, pressure,
 }) => {
-  useEffect(() => {
-
-  }, []);
   return (
         <Container className='container text-center'>
             <Row className="justify-content-md-center">
