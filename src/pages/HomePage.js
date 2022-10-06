@@ -11,15 +11,20 @@ const HomePage = () => {
   const [weather, setWeather] = useState([]);
 
   const getCurrentWeather = async () => {
-    setIsLoading(true);
-    const { data } = await useFetch('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
-    setWeather(data);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+      const { data } = await useFetch('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
+      setWeather(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log('datos no disponibles');
+    }
   };
 
   useEffect(() => {
     getCurrentWeather();
   }, []);
+
   return (
     <ClimaProvider>
     <div className="container">
