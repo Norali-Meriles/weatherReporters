@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
-import useAxios from '../hooks/CustomFetch/useAxios';
+import useAxios from '../hooks/CustomAxios/useAxios';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
