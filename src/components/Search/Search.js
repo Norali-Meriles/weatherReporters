@@ -12,7 +12,7 @@ const Search = ({ location }) => {
 
   const searchCity = async () => {
     const { data } = await axios(
-      `http://api.weatherapi.com/v1/search.json?key=6be8c28794924ed8a2a184922222905&q=${location}&days=5`,
+      `http://api.weatherapi.com/v1/search.json?key=6be8c28794924ed8a2a184922222905&q=${location}`,
     );
     setCity(data);
   };
@@ -24,7 +24,7 @@ const Search = ({ location }) => {
   const getCityByName = async () => {
     if (cityName) {
       const { data } = await axios(
-        `https://api.weatherapi.com/v1/current.json?key=6be8c28794924ed8a2a184922222905&q=${cityName}&aqi=no&days=5`,
+        `http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=${cityName}&days=5&aqi=no&alerts=no`,
       );
       setDatoClima(data);
     }

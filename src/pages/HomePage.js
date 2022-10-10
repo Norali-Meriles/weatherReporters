@@ -15,7 +15,7 @@ const HomePage = () => {
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
-    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
+    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip&days=5');
     setWeather(data);
     setIsLoading(false);
   };
