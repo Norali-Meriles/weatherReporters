@@ -12,12 +12,12 @@ const WeatherCard = ({ weather }) => {
       <div className="d-flex justify-content-center">
       <img
         src={data ? data.current?.condition.icon : weather.current?.condition.icon}
-        className="current-img my-3"
+        className="current-img my-3 w-50"
         alt={data ? data.current?.condition.text : weather.current?.condition.text}
       />
       </div>
       <div className="card-body">
-        <h2 className="card-title">{data ? data.current?.feelslike_c : weather.current?.feelslike_c}ºC</h2>
+        <h2 className="card-title text-center">{data ? data.current?.feelslike_c : weather.current?.feelslike_c}ºC</h2>
         <h5 className="card-text">{data ? data.current?.condition.text : weather.current?.condition.text}</h5>
         <p>Today - {date}</p>
         <p>

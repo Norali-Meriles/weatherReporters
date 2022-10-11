@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React from 'react';
 import HomePage from './pages/HomePage';
 import { ThemeProvider } from './providers/ThemeProvider';
