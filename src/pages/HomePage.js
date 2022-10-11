@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
-import useFetch from '../hooks/CustomFetch/useFetch';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
