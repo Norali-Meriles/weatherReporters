@@ -3,14 +3,14 @@ import axios from 'axios';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
+import { Forecast } from '../components/CardForecasday';
+import { InfoCards } from '../components/InfoCards';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import { useTheme } from '../providers/ThemeProvider';
-import InfoCards from '../components/InfoCards/InfoCards';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
-
   const { theme } = useTheme();
 
   const getCurrentWeather = async () => {
@@ -32,8 +32,8 @@ const HomePage = () => {
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
         <div className="col col-md-6 col-sm-12 my-5">
-          <Loading />
-          {isLoading ? <Loading /> : <InfoCards weather={weather} />}
+        {isLoading ? <Loading /> : <Forecast weather={weather} />}
+        {isLoading ? <Loading /> : <InfoCards weather={weather} />}
         </div>
       </div>
     </div>
