@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
-import useFetch from '../hooks/CustomFetch/useFetch';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
-import { Forecast } from '../components/CardForecasday';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,21 +22,15 @@ const HomePage = () => {
   }, []);
   return (
     <ClimaProvider>
-    <div className="container">
+    <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <div className="row">
-        <div className="col-6">
+        <div className="col col-md-6 col-sm-12">
         <Search />
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
-
         <div className="col col-md-6 col-sm-12 my-5">
-
-          {isLoading ? <Loading />
-            : <>
-           < Forecast weather={weather}/>
-           <InfoCards weather={weather} />
-           </>}
-
+          <Loading />
+          {isLoading ? <Loading /> : <InfoCards weather={weather} />}
         </div>
       </div>
     </div>
