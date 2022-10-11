@@ -1,13 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { ClimaProvider } from '../../providers/ClimaProvider';
+import { render } from '@testing-library/react';
 import WeatherCard from './WeatherCard';
-import { weatherCard } from '../../utils/test/mock-data';
 
-describe('card WeatherCard', () => {
-  test('Esperamos el render de WeatherCard', () => {
-    render(<ClimaProvider ><WeatherCard weather={weatherCard}/> </ClimaProvider>);
-    const resultado = screen.getByText('18');
-    console.log(resultado);
-    expect(resultado).toBeInTheDocument();
+describe('Weather Card test', () => {
+  test('Esperamos que renderice el componente WeatherCard', () => {
+    render(<WeatherCard />);
   });
 });

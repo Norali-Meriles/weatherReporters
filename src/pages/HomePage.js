@@ -4,6 +4,7 @@ import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
+import { useTheme } from '../providers/ThemeProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
 import { Forecast } from '../components/CardForecasday';
 
@@ -11,11 +12,17 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
 
+  const { theme } = useTheme();
+
   const getCurrentWeather = async () => {
-    setIsLoading(true);
-    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip&days=5');
-    setWeather(data);
-    setIsLoading(false);
+    try {
+      const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip&days=5');
+      setWeather(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log('error.response.message');
+      setIsLoading(true);
+    }
   };
 
   useEffect(() => {
@@ -23,21 +30,18 @@ const HomePage = () => {
   }, []);
   return (
     <ClimaProvider>
-    <div className="container">
+    <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
       <div className="row">
-        <div className="col-6">
+        <div className="col col-md-6 col-sm-12">
         <Search />
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
-
-        <div className="col col-md-6 col-sm-12 my-5">
-
+        <div className="col col-md-6 col-sm-12 my-3">
           {isLoading ? <Loading />
             : <>
-           < Forecast weather={weather}/>
-           <InfoCards weather={weather} />
-           </>}
-
+          <Forecast weather={weather} />
+          <InfoCards weather={weather} />
+          </>}
         </div>
       </div>
     </div>
