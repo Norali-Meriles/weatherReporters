@@ -6,13 +6,11 @@ import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
-import { useTheme } from '../providers/ThemeProvider';
 
 const HomePage = () => {
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
-  const { theme } = useTheme();
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
@@ -34,6 +32,7 @@ const HomePage = () => {
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
         <div className="col col-md-6 col-sm-12 my-5">
+          <Loading />
           {isLoading ? <Loading /> : <InfoCards weather={weather} />}
         </div>
       </div>

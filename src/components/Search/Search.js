@@ -5,7 +5,6 @@ import Select from './Select';
 import { useTheme } from '../../providers/ThemeProvider';
 
 const Search = ({ location }) => {
-  const { theme } = useTheme();
   const [city, setCity] = useState();
   const [cityName, setCityName] = useState();
   const setDatoClima = useClimaToggleContex();
