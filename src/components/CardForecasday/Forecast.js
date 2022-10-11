@@ -3,6 +3,7 @@ import { useClimaContex } from '../../providers/ClimaProvider';
 
 const Forecast = ({ weather }) => {
   const data = useClimaContex();
+
   return (
     <div>
      <section className="row justify-content-evenly ">
