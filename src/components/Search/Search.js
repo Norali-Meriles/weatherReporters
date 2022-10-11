@@ -8,7 +8,6 @@ const Search = ({ location }) => {
   const [city, setCity] = useState();
   const [cityName, setCityName] = useState();
   const setDatoClima = useClimaToggleContex();
-  const { theme } = useTheme();
 
   const searchCity = async () => {
     const { data } = await axios(

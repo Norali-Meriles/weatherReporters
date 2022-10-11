@@ -18,6 +18,7 @@ const CardForecasday = ({ forecast, className }) => {
          </p>
   </div>
 </div>
+
   );
 };
 export default CardForecasday;
