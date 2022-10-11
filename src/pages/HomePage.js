@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useTheme } from '../providers/ThemeProvider';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import { Search } from '../components/Search';
@@ -8,13 +7,12 @@ import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
 
 const HomePage = () => {
-  const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
-    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
+    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip&days=5');
     setWeather(data);
     setIsLoading(false);
   };
@@ -22,7 +20,6 @@ const HomePage = () => {
   useEffect(() => {
     getCurrentWeather();
   }, []);
-
   return (
     <ClimaProvider>
     <div className="container" style={{ backgroundColor: theme.background, color: theme.textColor }}>
