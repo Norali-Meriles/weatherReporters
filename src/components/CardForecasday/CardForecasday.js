@@ -6,8 +6,8 @@ const CardForecasday = ({ forecast, className, i }) => {
   const { theme } = useTheme();
   const date = moment(forecast?.date).format('ddd DD MMM ');
   return (
-<div className={` ${className} cardBody card d-flex align-items-center`} style={{ backgroundColor: theme.background, color: theme.textColor }} >
-{i <= '0' ? <h5 className="card-title text-center pt-3">tomorrow</h5>
+<div className={` ${className} cardBody card d-flex align-items-center my-2`} style={{ backgroundColor: theme.background, color: theme.textColor }} >
+{i <= '0' ? <h5 className="card-title text-center pt-3">Today</h5>
   : <h5 className="card-title text-center pt-3">{date}</h5>}
   <img src={forecast?.day?.condition?.icon} className="w-50" alt="forecast?.day?.condition?.name"/>
   <div className="card-body  d-flex">
