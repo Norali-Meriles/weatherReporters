@@ -5,20 +5,18 @@ import useFetch from '../hooks/CustomFetch/useFetch';
 import { Search } from '../components/Search';
 import { ClimaProvider } from '../providers/ClimaProvider';
 import InfoCards from '../components/InfoCards/InfoCards';
+import { Forecast } from '../components/CardForecasday';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
 
-  const getCurrentWeather = async ()
-    try {
-      setIsLoading(true);
-      const { data } = await useFetch('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip');
-      setWeather(data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log('datos no disponibles');
-      }
+
+  const getCurrentWeather = async () => {
+    setIsLoading(true);
+    const { data } = await axios('http://api.weatherapi.com/v1/forecast.json?key=6be8c28794924ed8a2a184922222905&q=auto:ip&days=5');
+    setWeather(data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -32,14 +30,15 @@ const HomePage = () => {
         <Search />
         {isLoading ? <Loading /> : <WeatherCard weather={weather} />}
         </div>
-        <div className="col-6">
-          <div>aca va componente de Norali</div>
-          <br />
-          <br />
-          <br />
-          <div>
-            <InfoCards />
-          </div>
+
+        <div className="col col-md-6 col-sm-12 my-5">
+
+          {isLoading ? <Loading />
+            : <>
+           < Forecast weather={weather}/>
+           <InfoCards weather={weather} />
+           </>}
+
         </div>
       </div>
     </div>

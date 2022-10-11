@@ -1,1 +1,3 @@
-export { default as CardForecasday } from './CardForecasday';
+
+export { default as Forecast } from './Forecast';
+

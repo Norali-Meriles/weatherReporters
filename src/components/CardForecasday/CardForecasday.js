@@ -1,30 +1,24 @@
 import React from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import moment from 'moment';
+// import { useTheme } from '../../providers/ThemeProvider';
 
-const CardForecasday = ({ className, forecast }) => {
-  console.log(forecast);
+const CardForecasday = ({ forecast, className }) => {
+  // const { theme } = useTheme();
   const date = moment(forecast?.date).format('ddd DD MMM ');
   return (
-    <article
-      className={` ${className} cardBody card` }
-    >
+<div className={` ${className} cardBody card d-flex align-items-center`} >
+<h5 className="card-title text-center pt-3">{date}</h5>
+  <img src={forecast?.day?.condition?.icon} className="w-50" alt="..."/>
+  <div className="card-body  d-flex">
+  <p className="me-2 my-0 ">
+  {forecast?.day?.maxtemp_c}°C
+        </p>
+         <p className="ms-2 my-0">
+         {forecast?.day?.mintemp_c}°C
+         </p>
+  </div>
+</div>
 
-       <h4 className="card-title text-center pt-3"> {date}</h4>
-      <img
-        src={forecast?.day?.condition?.icon}
-        className="w-50"
-        alt="Weather"
-      />
-      <section className="card-body text d-flex ">
-        <p className="me-2 my-0 ">
-          {forecast?.day?.maxtemp_c}°C
-        </p>
-        <p className="ms-2 my-0">
-          {forecast?.day?.mintemp_c}°C
-        </p>
-      </section>
-    </article>
   );
 };
 export default CardForecasday;
