@@ -35,7 +35,7 @@ const Search = ({ location }) => {
   return (
     <div className="my-3">
       <Select city={city} setCityName={setCityName}
-      // style={{ backgroundColor: theme.background, color: theme.textColor }} 
+      // style={{ backgroundColor: theme.background, color: theme.textColor }}
       />
     </div>
   );

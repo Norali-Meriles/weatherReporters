@@ -7,7 +7,7 @@ const Select = ({ city, setCityName }) => {
   };
   return (
     <div>
-        <input className="form-control" list="datalistOptions" placeholder="Search your city..." onChange={(e) => getCityId(e)} />
+        <input className= "form-control" list="datalistOptions" placeholder="Search your city..." onChange={(e) => getCityId(e)} data-testid="input-search" />
           <datalist id="datalistOptions">
             {city?.map(ciudad => <option
             key={ciudad.id}

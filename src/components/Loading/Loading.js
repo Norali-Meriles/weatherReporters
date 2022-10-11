@@ -4,7 +4,7 @@ import './style.css';
 
 const Loading = () => {
   return (
-    <div className="loader"></div>
+    <div className="loader" data-testid="loading-card">Loading...</div>
   );
 };
 

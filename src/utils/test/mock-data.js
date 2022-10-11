@@ -48,3 +48,19 @@ export const weatherInfoCard = {
     vis_km: 10,
   },
 };
+export const weatherCard = {
+      current: {
+            last_updated: "2022-10-10 18:00",
+            feelslike_c: 18,
+            condition: {
+                  text: "Sunny",
+                  icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            }, 
+      },
+      location: {
+      name: "Villa Wilde",
+      tz_id: "America/Argentina/Buenos_Aires",
+      },
+    };
+
+export const location= " mad ";
