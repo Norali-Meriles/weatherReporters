@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { WeatherCard } from '../components/WeatherCard';
 import { Loading } from '../components/Loading';
 import useFetch from '../hooks/CustomFetch/useFetch';
@@ -10,7 +11,6 @@ import { Forecast } from '../components/CardForecasday';
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState([]);
-
 
   const getCurrentWeather = async () => {
     setIsLoading(true);
